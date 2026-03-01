@@ -17,6 +17,10 @@ public:
     void setRed(const int red) { m_red = red; }
     void setGreen(const int green) { m_green = green; }
     void setBlue(const int blue) { m_blue = blue; }
+
+    void print() const {
+        
+    }
 };
 int main() {
     Color myColor{};
