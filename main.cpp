@@ -13,9 +13,15 @@ public:
     int getRed() const { return m_red; }
     int getGreen() const { return m_green; };
     int getBlue() const { return m_blue; };
+    // Setter
+    void setRed(const int red) { m_red = red; }
+    void setGreen(const int green) { m_green = green; }
+    void setBlue(const int blue) { m_blue = blue; }
 };
 int main() {
     Color myColor{};
+    myColor.setRed(2);
     cout << myColor.getBlue();
+    cout << myColor.getRed();
     return 0;
 }
