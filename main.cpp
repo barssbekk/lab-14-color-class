@@ -53,6 +53,7 @@ int main() {
         vecColor.push_back(temp);
     }
 
+    // Output a vector
     for (const auto& colors : vecColor) {
         colors.print();
     }
