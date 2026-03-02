@@ -32,6 +32,8 @@ public:
 };
 int main() {
     vector<Color> vecColor{};
+
+    // Check if file opens
     ifstream fileInput{"data.txt"};
     if (!fileInput) {
         cerr << "File not found\n";
