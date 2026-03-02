@@ -30,6 +30,7 @@ public:
         ++s_counter;
     }
 };
+
 int main() {
     vector<Color> vecColor{};
 
