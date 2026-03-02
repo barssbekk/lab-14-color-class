@@ -33,5 +33,18 @@ int main() {
         cerr << "File not found";
         return 1;
     }
+
+    int inputRed{};
+    int inputGreen{};
+    int inputBlue{};
+    while (fileInput >> inputRed >> inputGreen >> inputBlue) {
+        Color temp{};
+        temp.setRed(inputRed);
+        temp.setBlue(inputBlue);
+        temp.setGreen(inputGreen);
+        vecColor.push_back(temp);
+    }
+
+
     return 0;
 }
