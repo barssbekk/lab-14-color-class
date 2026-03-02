@@ -1,5 +1,7 @@
 // COMSC-210 | Lab 14 | Barsbek
 #include <iostream>
+#include <vector>
+#include <fstream>
 
 using namespace std;
 
@@ -19,13 +21,17 @@ public:
     void setBlue(const int blue) { m_blue = blue; }
 
     void print() const {
-        
+        cout << "Red: " << m_red << '\n';
+        cout << "Green: " << m_green << '\n';
+        cout << "Blue: " << m_blue << '\n';
     }
 };
 int main() {
-    Color myColor{};
-    myColor.setRed(2);
-    cout << myColor.getBlue();
-    cout << myColor.getRed();
+    vector<Color> vecColor{};
+    fstream fileInput{"data.txt"};
+    if (!fileInput) {
+        cerr << "File not found";
+        return 1;
+    }
     return 0;
 }
