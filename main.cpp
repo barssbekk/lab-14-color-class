@@ -13,13 +13,14 @@ private:
 public:
     // Getter
     int getRed() const { return m_red; }
-    int getGreen() const { return m_green; };
-    int getBlue() const { return m_blue; };
+    int getGreen() const { return m_green; }
+    int getBlue() const { return m_blue; }
     // Setter
     void setRed(const int red) { m_red = red; }
     void setGreen(const int green) { m_green = green; }
     void setBlue(const int blue) { m_blue = blue; }
 
+    // print() outputs the RGB values
     void print() const {
         static int s_counter{1};
         cout << "Color #" << s_counter << '\n';
@@ -33,13 +34,15 @@ int main() {
     vector<Color> vecColor{};
     ifstream fileInput{"data.txt"};
     if (!fileInput) {
-        cerr << "File not found";
+        cerr << "File not found\n";
         return 1;
     }
 
     int inputRed{};
     int inputGreen{};
     int inputBlue{};
+
+    // Populate with data
     while (fileInput >> inputRed >> inputGreen >> inputBlue) {
         Color temp{};
         temp.setRed(inputRed);
