@@ -21,15 +21,17 @@ public:
     void setBlue(const int blue) { m_blue = blue; }
 
     void print() const {
-
+        static int s_counter{1};
+        cout << "Color #" << s_counter << '\n';
         cout << "\tRed: " << m_red << '\n'
              << "\tGreen: " << m_green << '\n'
              << "\tBlue: " << m_blue << '\n';
+        ++s_counter;
     }
 };
 int main() {
     vector<Color> vecColor{};
-    fstream fileInput{"data.txt"};
+    ifstream fileInput{"data.txt"};
     if (!fileInput) {
         cerr << "File not found";
         return 1;
@@ -45,11 +47,10 @@ int main() {
         temp.setGreen(inputGreen);
         vecColor.push_back(temp);
     }
-    vecColor.at(0).print();
 
-    // for (const auto& colors : vecColor) {
-    //     colors.print();
-    // }
+    for (const auto& colors : vecColor) {
+        colors.print();
+    }
 
     return 0;
 }
