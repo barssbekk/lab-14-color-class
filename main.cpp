@@ -21,9 +21,10 @@ public:
     void setBlue(const int blue) { m_blue = blue; }
 
     void print() const {
-        cout << "Red: " << m_red << '\n';
-        cout << "Green: " << m_green << '\n';
-        cout << "Blue: " << m_blue << '\n';
+
+        cout << "\tRed: " << m_red << '\n'
+             << "\tGreen: " << m_green << '\n'
+             << "\tBlue: " << m_blue << '\n';
     }
 };
 int main() {
@@ -44,7 +45,11 @@ int main() {
         temp.setGreen(inputGreen);
         vecColor.push_back(temp);
     }
+    vecColor.at(0).print();
 
+    // for (const auto& colors : vecColor) {
+    //     colors.print();
+    // }
 
     return 0;
 }
